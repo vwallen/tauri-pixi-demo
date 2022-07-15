@@ -16,7 +16,7 @@ const vLoadGame = {
   <div id="top-bar">
     <div id="score">SCORE: <b>{{score}}</b></div>
     <router-link to="/start" custom v-slot="{ navigate, href, route }">
-      <button id="exit" @click="navigate(href)">X</button>
+      <button id="exit" @click="navigate">X</button>
     </router-link>
   </div>
   <div id="game-frame"><canvas v-load-game id="game-canvas" /></div>

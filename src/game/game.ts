@@ -44,13 +44,13 @@ export class Game {
 
 export class Bubble extends Container {
 
-    private static readonly bubbleTexture = Texture.from('./src/assets/bubble.png')
+    private static readonly bubbleTexture = Texture.from('/bubble.png')
     private static readonly iconTextures = [
-        Texture.from('./src/assets/pixi-icon.svg'),
-        Texture.from('./src/assets/tauri-icon.svg'),
-        // Texture.from('./src/assets/typescript-icon.svg'),
-        // Texture.from('./src/assets/vite-icon.svg'),
-        Texture.from('./src/assets/vue-icon.svg'),
+        Texture.from('/pixi-icon.svg'),
+        Texture.from('/tauri-icon.svg'),
+        Texture.from('/typescript-icon.svg'),
+        Texture.from('/vite-icon.svg'),
+        Texture.from('/vue-icon.svg'),
     ]
     private readonly icon:Sprite
     private readonly bubble:Sprite
