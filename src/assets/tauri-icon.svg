@@ -1,78 +1,25 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="205.24413"
-   height="231.18359"
-   fill="none"
-   version="1.1"
-   id="svg20"
-   sodipodi:docname="tauri_icon.svg"
-   inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
-  <metadata
-     id="metadata26">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs24" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1906"
-     inkscape:window-height="1240"
-     id="namedview22"
-     showgrid="false"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     inkscape:zoom="1.4764468"
-     inkscape:cx="371.50954"
-     inkscape:cy="115.63212"
-     inkscape:window-x="2498"
-     inkscape:window-y="326"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg20" />
-  <path
-     d="m 143.10954,84.132117 a 22,22 0 1 1 -43.999996,0 22,22 0 0 1 43.999996,0 z"
-     fill="#ffc131"
-     id="path12" />
-  <circle
-     cx="-84.109543"
-     cy="-147.13211"
-     transform="scale(-1)"
-     fill="#24c8db"
-     r="22"
-     id="circle14" />
-  <path
-     fill-rule="evenodd"
-     clip-rule="evenodd"
-     d="m 166.70954,154.63212 a 84,84 0 0 1 -29,11.8 59,59 0 0 0 2.9,-26.6 59,59 0 1 0 -67.399996,-90.100003 98,98 0 0 0 -32.2,9.4 84,84 0 1 1 125.699996,95.500003 z M 42.009544,74.432117 l 20.6,2.5 a 59,59 0 0 1 2.6,-11.7 84,84 0 0 0 -23.2,9.2 z"
-     fill="#ffc131"
-     id="path16" />
-  <path
-     fill-rule="evenodd"
-     clip-rule="evenodd"
-     d="m 38.409544,76.632117 a 84,84 0 0 1 29.2,-11.9 58.9,58.9 0 0 0 -3.3,26.7 59,59 0 1 0 67.699996,90.000003 98,98 0 0 0 32.2,-9.3 A 84,84 0 1 1 38.409544,76.632117 Z m 124.699996,80.200003 -0.4,0.2 z"
-     fill="#24c8db"
-     id="path18" />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg20" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:cc="http://creativecommons.org/ns#" xmlns:svg="http://www.w3.org/2000/svg" inkscape:version="1.0.1 (c497b03c, 2020-09-10)" sodipodi:docname="tauri_icon.svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+	 style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFC131;}
+	.st1{fill:#24C8DB;}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFC131;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#24C8DB;}
+</style>
+<sodipodi:namedview  bordercolor="#666666" borderopacity="1" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" gridtolerance="10" guidetolerance="10" id="namedview22" inkscape:current-layer="svg20" inkscape:cx="371.50954" inkscape:cy="115.63212" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-height="1240" inkscape:window-maximized="0" inkscape:window-width="1906" inkscape:window-x="2498" inkscape:window-y="326" inkscape:zoom="1.4764468" objecttolerance="10" pagecolor="#ffffff" showgrid="false">
+	</sodipodi:namedview>
+<g>
+	<path id="path12" class="st0" d="M67.5,36.4c0,5.3-4.3,9.5-9.5,9.5s-9.5-4.3-9.5-9.5s4.3-9.5,9.5-9.5S67.5,31.1,67.5,36.4z"/>
+	<circle id="circle14" class="st1" cx="42" cy="63.6" r="9.5"/>
+	<path id="path16" class="st2" d="M77.7,66.9c-3.8,2.5-8.1,4.2-12.5,5.1c1.3-3.7,1.7-7.6,1.3-11.5C79.7,55.8,86.7,41.3,82.1,28
+		C77.4,14.7,62.9,7.7,49.6,12.3c-5,1.7-9.2,4.9-12.3,9.2c-4.8,0.5-9.6,1.9-13.9,4.1C29.3,6.4,49.6-4.3,68.8,1.6s29.9,26.3,23.9,45.5
+		C90.2,55.3,84.9,62.3,77.7,66.9L77.7,66.9z M23.8,32.2l8.9,1.1c0.2-1.7,0.6-3.4,1.1-5.1C30.3,29,26.9,30.4,23.8,32.2z"/>
+	<path id="path18" class="st3" d="M22.2,33.2c3.8-2.5,8.1-4.2,12.6-5.1c-1.4,3.7-1.8,7.6-1.4,11.5c-13.3,4.7-20.2,19.3-15.5,32.6
+		s19.3,20.2,32.6,15.5c4.9-1.7,9.1-4.9,12.2-9.2c4.8-0.5,9.5-1.9,13.9-4c-6,19.2-26.3,29.9-45.5,23.9C12,92.4,1.3,72,7.3,52.9
+		C9.8,44.7,15.1,37.8,22.2,33.2z M76.2,67.8L76,67.9L76.2,67.8z"/>
+</g>
 </svg>

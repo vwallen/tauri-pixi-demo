@@ -12,9 +12,6 @@ const vLoadGame = {
 }
 </script>
 
-<script lang="ts">
-</script>
-
 <template>
   <div id="top-bar">
     <div id="score">SCORE: <b>{{score}}</b></div>
