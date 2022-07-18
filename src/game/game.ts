@@ -1,20 +1,30 @@
-import {Application, Container, Loader, Sprite, Ticker, Texture, Graphics} from "pixi.js";
+import {Application, Container, Sprite, Ticker, Texture, InteractionEvent} from "pixi.js";
+import EventEmitter from "eventemitter3";
 
-export class Game {
+export class Game extends EventEmitter {
+
+    static SCORED = 'scored'
+    static GAMEOVER = 'gameover'
 
     // app is declared with '!' to allow delayed initialization
     // without triggering a TypeScript error
     private app!:Application
-    private bubbles:Array<Bubble>
+    private canvas!:HTMLCanvasElement
+    private readonly bubbles:Array<Bubble>
+
+    public score:number
 
     public constructor() {
+        super()
         this.bubbles = []
+        this.score = 0
     }
 
     // the app is initialized after construction to allow it
     // to be managed externally by the Vue component lifecycle
     // see: @/components/Game.vue
     public init(canvas:HTMLCanvasElement) {
+        this.canvas = canvas
         this.app = new Application({
             view: canvas,
             resizeTo: window,
@@ -22,11 +32,13 @@ export class Game {
             autoDensity: true,
             backgroundAlpha: 0,
         })
+        this.score = 0
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 25; i++) {
             let bubble = new Bubble(0.75 + Math.random() * 0.5)
             bubble.x = 25 * Math.ceil(1280/25 * Math.random())
-            bubble.y = i * 100 + 1280 + 25 * Math.ceil(960/25 * Math.random())
+            bubble.y = 960 + (i * 100) + (50 * Math.random())
+            bubble.on(Bubble.POPPED, this.bubblePopped, this)
             this.app.stage.addChild(bubble)
             this.bubbles.push(bubble)
         }
@@ -34,15 +46,50 @@ export class Game {
         Ticker.shared.add(this.update, this);
     }
 
+    public cleanup() {
+        Ticker.shared.remove(this.update, this)
+        let bubble:Bubble
+        for (let b in this.bubbles) {
+            bubble = this.bubbles[b]
+            bubble.removeListener(Bubble.POPPED, this.bubblePopped, this)
+            this.app.stage.removeChild(bubble)
+            bubble.destroy()
+        }
+        this.app.destroy()
+    }
+
+    public reset() {
+        this.cleanup()
+        this.init(this.canvas)
+    }
+
+    private bubblePopped(bubble:Bubble) {
+        this.bubbles.splice(this.bubbles.indexOf(bubble), 1)
+        this.app.stage.removeChild(bubble)
+        this.score += Math.floor(bubble.y)
+        this.emit(Game.SCORED)
+        bubble.destroy()
+    }
+
+    private endGame() {
+        Ticker.shared.remove(this.update, this)
+        this.emit(Game.GAMEOVER)
+    }
+
     private update(deltaTime: number): void {
         for (let b in this.bubbles) {
             this.bubbles[b].update(deltaTime)
+        }
+        if (this.bubbles.length === 0) {
+            this.endGame()
         }
     }
 
 }
 
 export class Bubble extends Container {
+
+    static POPPED = 'popped'
 
     private static readonly bubbleTexture = Texture.from('/bubble.png')
     private static readonly iconTextures = [
@@ -60,7 +107,7 @@ export class Bubble extends Container {
         super()
 
         this.scale.set(scale)
-        this.velocity = Math.random() + scale // between 0.75 - 2.50
+        this.velocity = Math.random() + scale/2 // between 0.375 - 1.750
 
         let icon = Bubble.iconTextures[Math.floor(Math.random() * Bubble.iconTextures.length)]
         this.icon = Sprite.from(icon)
@@ -72,9 +119,23 @@ export class Bubble extends Container {
         this.bubble = Sprite.from(Bubble.bubbleTexture)
         this.bubble.anchor.set(0.5, 0.5)
         this.addChild(this.bubble)
+
+        this.interactive = true
+        this.on('pointerdown', this.pop, this)
+
+        this.update = this.updateFloating
     }
 
-    public update(dt:number) {
+    private pop(e:InteractionEvent) {
+        this.removeChild(this.bubble)
+        this.bubble.destroy()
+        this.interactive = false
+        this.update = this.updatePopping
+    }
+
+    public update:Function
+
+    private updateFloating(dt:number) {
         this.y -= 5 * dt * this.velocity
         if (this.y < 0) {
             this.x = 25 * Math.ceil(1280/25 * Math.random())
@@ -90,5 +151,16 @@ export class Bubble extends Container {
         this.bubble.x = wobble
     }
 
+    private updatePopping(dt:number) {
+        this.icon.alpha = this.icon.alpha - 0.1
+        if (this.icon.alpha < 0.1) {
+            this.emit(Bubble.POPPED, this)
+            this.update = this.updateNothing
+        }
+    }
+
+    private updateNothing(dt:number) {
+        // wait to be cleaned up
+    }
 }
 
