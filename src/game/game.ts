@@ -1,7 +1,6 @@
-import {Application, Container, Sprite, Ticker, Texture, InteractionEvent} from "pixi.js";
-import EventEmitter from "eventemitter3";
+import {Application, Container, Sprite, Ticker, Texture, InteractionEvent, utils} from "pixi.js";
 
-export class Game extends EventEmitter {
+export class Game extends utils.EventEmitter {
 
     static SCORED = 'scored'
     static GAMEOVER = 'gameover'

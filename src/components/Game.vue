@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, watch} from "vue"
+import {computed, ref} from "vue"
 import {Game} from "@/game/game"
 
 const gameOver = ref<boolean>(false)
