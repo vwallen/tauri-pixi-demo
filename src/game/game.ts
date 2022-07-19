@@ -1,4 +1,12 @@
-import {Application, Container, Sprite, Ticker, Texture, InteractionEvent, utils} from "pixi.js";
+import {
+    Application,
+    Container,
+    Sprite,
+    Ticker,
+    Texture,
+    InteractionEvent,
+    utils
+} from "pixi.js";
 
 export class Game extends utils.EventEmitter {
 
